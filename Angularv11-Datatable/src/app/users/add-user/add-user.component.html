@@ -1,0 +1,45 @@
+<div class="container">
+    <h3 mat-dialog-title>Add New User</h3>
+  
+    <form class="mat-dialog-content" [formGroup]="addUserForm"  autocomplete="off">
+      <div class="form">
+        <mat-form-field color="accent">
+          <input matInput class="form-control" placeholder="First Name" formControlName="FirstName" >
+          <!-- <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error> -->
+        </mat-form-field>
+      </div>
+  
+      <!--Textarea for demo purposes-->
+      <div class="form">
+        <mat-form-field color="accent">
+          <input matInput class="form-control" placeholder="Last Name" formControlName="LastName">
+          <!-- <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error> -->
+        </mat-form-field>
+      </div>
+  
+      <!--Contains mat-hint for characters count and has maxLengt set-->
+      <div class="form">
+        <mat-form-field color="accent">
+          <input matInput class="form-control" placeholder="E-mail" formControlName="Email">
+          <!-- <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+          <mat-hint align="end">{{inputstate.value?.length || 0}}/10</mat-hint> -->
+        </mat-form-field>
+      </div>
+  
+      <!-- <div class="form">
+        <mat-form-field color="accent">
+          <input matInput class="form-control" placeholder="Phone" formControlName="phone">
+        </mat-form-field>
+      </div> -->
+      <div class="form">
+        <mat-form-field color="accent">
+          <input matInput class="form-control" placeholder="Address" formControlName="Address" name="Address">
+        </mat-form-field>
+      </div>
+      <div mat-dialog-actions>
+        <button mat-button (click)="addNewUser()" [disabled]="!addUserForm.valid">Save</button>
+        <button mat-button (click)="onNoClick()" tabindex="-1">Cancel</button>
+      </div> 
+    </form>
+  </div>
+  

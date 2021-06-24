@@ -1,0 +1,38 @@
+<div class="container">
+    <h3 mat-dialog-title>Update User</h3>
+  
+    <form class="mat-dialog-content" [formGroup]="editUserForm"  autocomplete="off">
+      <div class="form">
+        <mat-form-field color="accent">
+          <input matInput class="form-control" placeholder="First Name" formControlName="FirstName" >
+          </mat-form-field>
+      </div>
+  
+      
+      <div class="form">
+        <mat-form-field color="accent">
+          <input matInput class="form-control" placeholder="Last Name" formControlName="LastName">
+          </mat-form-field>
+      </div>
+  
+      
+      <div class="form">
+        <mat-form-field color="accent">
+          <input matInput class="form-control" placeholder="E-mail" formControlName="Email">
+         
+        </mat-form-field>
+      </div>
+  
+      
+      <div class="form">
+        <mat-form-field color="accent">
+          <input matInput class="form-control" placeholder="Address" formControlName="Address" name="Address">
+        </mat-form-field>
+      </div>
+      <div mat-dialog-actions>
+        <button mat-button (click)="updateUser()" [disabled]="!editUserForm.valid">Update</button>
+        <button mat-button (click)="onNoClick()" tabindex="-1">Cancel</button>
+      </div>
+    </form>
+  </div>
+  
